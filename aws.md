@@ -75,13 +75,34 @@ Você verá uma tela parecida com essa:
 ![https://user-images.githubusercontent.com/49401569/184734851-41ab6a4b-39ae-440b-a85b-bec199057f08.png](https://user-images.githubusercontent.com/49401569/184734851-41ab6a4b-39ae-440b-a85b-bec199057f08.png)
 
 Próximo passo será instalar o docker em nossa máquina.
-Você pode está olhando a configuração completa do docker em: [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+Aqui reproduziremos os comandos, mas saiba que eles poderão ficar desatualizados. A documentação oficial é sempre a melhor fonte. [Documentação Oficial](https://docs.docker.com/engine/install/ubuntu/)
 
-Rode o seguintes comando:
+Execute os comandos abaixo exatamente na mesma ordem (apenas para Ubuntu e alguns derivados do Debian):
+
+1 - Desistale possíveis instalações antigas do Docker:
 
 ```bash
-sudo apt install ca-certificates curl gnupg lsb-release
+sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
+
+2 - Atualize as listas do apt: 
+
+```bash
+  sudo apt-get update
+```
+
+3 - Adicione os certificados e dependências para instalação do Docker:
+
+```bash
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+4 - Adicione a chave oficial do Docker:
 
 ```bash
 sudo mkdir -p /etc/apt/keyrings
@@ -91,16 +112,56 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 ```
 
+5 - Adicione a lista de instalação do Docker:
+
 ```bash
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-```bash
-sudo apt-get update
-```
+6 - Atualize novamente as listas do apt:
+ 
+ ```bash
+ sudo apt-get update
+ ```
+ 
+ 7 - Instale o de fato o Docker: 
+ 
+ ```bash
+ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+ ```
+ 
+8 - Valide a instalação do Docker, rodar o seguinte comando para certificar-se que não ocorreu erro:
 
 ```bash
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+ sudo docker run hello-world
 ```
+
+A mensagem esperada deve ser como no axemplo a seguir:
+
+```bash
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+ ```
+
+
+
