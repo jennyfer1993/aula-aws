@@ -126,7 +126,7 @@ echo \
  sudo apt-get update
  ```
  
- 7 - Instale o de fato o Docker: 
+ 7 - Instale de fato o Docker: 
  
  ```bash
  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
