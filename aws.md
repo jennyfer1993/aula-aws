@@ -138,7 +138,7 @@ echo \
  sudo docker run hello-world
 ```
 
-A mensagem esperada deve ser como no axemplo a seguir:
+A mensagem esperada deve ser similar ao exemplo a seguir:
 
 ```bash
 Hello from Docker!
