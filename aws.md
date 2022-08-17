@@ -189,7 +189,7 @@ sudo docker compose build node caddy workspace mysql
 ```
 ![image](https://user-images.githubusercontent.com/74742097/185012415-47e9fc4e-f167-43cf-a0c4-22e27dc8f2ee.png)
 
-4 - Faça o up  dos containers node caddy workspace mysql (o comando up também fará o build na primeira vez - este comando poderá demorar horas, dependendo da configuração da máquina)
+4 - Faça o up  dos containers node caddy workspace mysql (o comando up também fará o build na primeira vez - este comando poderá demorar horas, dependendo da configuração da máquina):
 
 ```bash
 sudo docker compose up -d node caddy workspace mysql
