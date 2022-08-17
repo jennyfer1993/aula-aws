@@ -166,4 +166,14 @@ For more examples and ideas, visit:
 
 # Instalação do Docker-Flex
 
+É indicado a criaçao de uma pasta padrão chamada `document_root`
+
+1 - Clonar o projeto dentro da pasta padrão `document_root`:
+
+```bash
+git clone https://github.com/flexpeak/docker-flex.git
+```
+
+git clone https://github.com/flexpeak/docker-flex.git
+
 
