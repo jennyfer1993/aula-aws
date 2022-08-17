@@ -176,11 +176,18 @@ git clone https://github.com/flexpeak/docker-flex.git
 Exemplo: 
 ![image](https://user-images.githubusercontent.com/74742097/185010924-3bf8389c-34b9-48d7-a3ce-be0a6ce11bea.png)
 
-2 - Entre na pasta do projeto e copiar o arquivo `.env-example` para um novo arquivo chamado `.env` e, se necessário, edite de acordo ...
+2 - Entre na pasta do projeto e copiar o arquivo `.env-example` para um novo arquivo chamado `.env`.
 
 ```bash
 cp .env.example .env
 ```
+
+agora vamos ver o conteúdo do arquivo .env e caso necessário alterá-lo
+```bash
+nano .env
+```
+![image](https://user-images.githubusercontent.com/49401569/185249602-ca351d79-a82a-4f0d-8543-66d201117a6c.png)
+
 
 3 - Faça o build dos containers do Caddy, node, workspace e mysql (o comando up também fará o build na primeira vez - este comando poderá demorar horas, dependendo da configuração da máquina):
 
@@ -195,6 +202,21 @@ sudo docker compose build node caddy workspace mysql
 sudo docker compose up -d node caddy workspace mysql
 ```
 ![image](https://user-images.githubusercontent.com/74742097/185012556-b10b1529-42e4-447d-a8e3-31b1cd903793.png)
+
+Agora vamos verificar os se os containers estão ok
+```bash
+sudo docker compose ps
+```
+![image](https://user-images.githubusercontent.com/49401569/185250721-66f7fc17-c81f-45e4-81b0-b1977c9dbdc5.png)
+
+Note que o container do node está com o status de Restarting, isso porque ainda não configuramos o PM2 para enxergar a configuração do nosso projeto backend.
+Podemos ver o erro com o comando
+```bash
+sudo docker logs -f flex-node
+```
+![image](https://user-images.githubusercontent.com/49401569/185251359-8419746a-891c-4d3f-8944-a511d34babad.png)
+
+
 
 
 
