@@ -176,5 +176,26 @@ git clone https://github.com/flexpeak/docker-flex.git
 Exemplo: 
 ![image](https://user-images.githubusercontent.com/74742097/185010924-3bf8389c-34b9-48d7-a3ce-be0a6ce11bea.png)
 
+2 - Entre na pasta do projeto e copiar o arquivo `.env-example` para um novo arquivo chamado `.env` e, se necessário, edite de acordo ...
+
+```bash
+cp .env.example .env
+```
+
+3 - Faça o build dos containers do Caddy, node, workspace e mysql (o comando up também fará o build na primeira vez - este comando poderá demorar horas, dependendo da configuração da máquina):
+
+```bash
+sudo docker compose build node caddy workspace mysql
+```
+![image](https://user-images.githubusercontent.com/74742097/185012415-47e9fc4e-f167-43cf-a0c4-22e27dc8f2ee.png)
+
+4 - Faça o up  dos containers node caddy workspace mysql (o comando up também fará o build na primeira vez - este comando poderá demorar horas, dependendo da configuração da máquina)
+
+```bash
+sudo docker compose up -d node caddy workspace mysql
+```
+![image](https://user-images.githubusercontent.com/74742097/185012556-b10b1529-42e4-447d-a8e3-31b1cd903793.png)
+
+
 
 
