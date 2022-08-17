@@ -173,7 +173,8 @@ For more examples and ideas, visit:
 ```bash
 git clone https://github.com/flexpeak/docker-flex.git
 ```
+Exemplo: 
+![image](https://user-images.githubusercontent.com/74742097/185010924-3bf8389c-34b9-48d7-a3ce-be0a6ce11bea.png)
 
-git clone https://github.com/flexpeak/docker-flex.git
 
 
