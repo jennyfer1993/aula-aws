@@ -288,8 +288,11 @@ sudo docker compose ps
 npm run build
 ```
 
+configuração do caddy...
 
+configuração do registro br
 
+print do sistema em produção
 
 
 
