@@ -271,6 +271,18 @@ Em seguida editar o arquivo:
 ![image](https://user-images.githubusercontent.com/74742097/185274272-777811ab-e50c-44ac-9086-c761896bd531.png)
 
 
+- Após essa configuração é preciso restartar o docker novamente com o comando: 
+```bash
+sudo docker compose restart
+```
+
+7 - Após realizar a configuração e restartar o docker, rodar o camdo para verificar se a aplicação em node foi configurada com sucesso: 
+```bash
+sudo docker compose ps
+```
+![image](https://user-images.githubusercontent.com/74742097/185274753-54a5717c-cdb8-4aec-86cb-f0e05363d159.png)
+
+
 
 
 
