@@ -220,9 +220,18 @@ sudo docker logs -f flex-node
 
 Para a aplicação BackEnd, segue as consigurações: 
 
-1 - 
+1 - Na pasta `document_root` fazer o clone dos projetos BackEnd e FrontEnd: 
+ - BackEnd
+```bash
+git clone https://github.com/flexpeak/agenda.git
+```
 
+- FrontEnd
+```bash
+https://github.com/flexpeak/agenda-front.git
+```
 
+2 - 
 
 
 
