@@ -245,6 +245,34 @@ cp .env-example .env
 cp .env-example .env
 ```
 
+3 - Agora é preciso instalar todas as dependências do projeto em **`node`** e **`react`**, premeiro é preciso estar na pasta do `docker-flex` e entrar no container do workspace com o sguinte comando: 
+
+```bash
+sudo docker compose exec --user=flexdock workspace
+```
+
+4 - Entrar na pasta do projeto backend `agenda` e rodar o comando: 
+```bash
+npm install
+```
+
+5 - 4 - Entrar na pasta do projeto backend `agenda-front` e rodar o comando: 
+```bash
+npm install
+```
+
+6 - Configurar o backend dentro do projeto docker-flex, entrar editar o arquivo `ecosystem.config.js` dentro da pasta node, para editar o arquivo via terminal rodar o comando: 
+```bash
+nano ecosystem.config.js
+```
+![image](https://user-images.githubusercontent.com/74742097/185274030-001a2c4b-38d2-45f2-a9ef-add9970218ed.png)
+
+Em seguida editar o arquivo: 
+![image](https://user-images.githubusercontent.com/74742097/185274272-777811ab-e50c-44ac-9086-c761896bd531.png)
+
+
+
+
 
 
 
