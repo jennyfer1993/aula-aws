@@ -282,6 +282,12 @@ sudo docker compose ps
 ```
 ![image](https://user-images.githubusercontent.com/74742097/185274753-54a5717c-cdb8-4aec-86cb-f0e05363d159.png)
 
+8 - Agora é ncessário retirar o projeto do ambiente de desenvolvimento e transofrmar em ambiente de produção, para isso entrar no container do workspace e rodar o comando na pasta do projeto react
+
+```bash
+npm run build
+```
+
 
 
 
