@@ -218,6 +218,9 @@ sudo docker logs -f flex-node
 
 # Configurando aplicação BackEnd e FrontEnd
 
+Para a aplicação BackEnd, segue as consigurações: 
+
+1 - 
 
 
 
