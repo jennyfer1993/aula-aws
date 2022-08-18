@@ -231,7 +231,12 @@ git clone https://github.com/flexpeak/agenda.git
 https://github.com/flexpeak/agenda-front.git
 ```
 
-2 - 
+2 - Agora, é necessário fazer a cópia do arquivo .env-example que contem em ambos os projetos;
+- Entrar na pasta do projeto `agenda` e utilize o seguinte compando para copiar e criar o arquivo `.env`, lembrando que o arquivo .env está definido no arquivo .gitignore portanto toda vez que for buildar os projetos é preciso criar manualmente o arquivo `.env`: 
+
+```bash
+cp .env-example .env
+```
 
 
 
