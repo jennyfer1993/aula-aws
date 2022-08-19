@@ -287,12 +287,45 @@ sudo docker compose ps
 ```bash
 npm run build
 ```
+Com os projetos todos configurados e buildados, vamos configurar o [Caddy]([https://docs.docker.com/engine/install/ubuntu/](https://caddyserver.com/)), ele será responsável por dar acesso aos nossos projetos utilizando protocolo HTTPS 
+Vamos acessar o arquivo de configuração dele que estará em ~/document_root/docker-flex/caddy/caddy
+```bash
+sudo nano Caddyfile
+```
+![image](https://user-images.githubusercontent.com/49401569/185714660-63d8531b-9d02-47da-adef-8def8c9ff31b.png)
 
-configuração do caddy...
+vamos configurar nosso servidor node
+```bash
+https://api.gabrielomena.com.br {
+    reverse_proxy node:8080
+}
+```
+a porta é a mesma que configuramos em nosso projeto node
+Agora vamos configurar o nosso projeto em React
 
-configuração do registro br
+```bash
+https://gabrielomena.com.br {
+    root * /var/www/agenda-front/build
+    try_files {path} /index.html
+    file_server
+}
+```
+**Lembre-se que após editar as configurações, você deve restartar o docker***
+****Lembre-se de configurar no .env do front o mesmo endereço que está na configuração do node no Caddy, neste exemplo: https://api.gabrielomena.com.br****
 
-print do sistema em produção
+Após finalizar as configurações do nosso servidor vamos configurar nosso domínio para redirecionar para ele.
+Nesse exemplo usaremos o [Registro.br](https://registro.br)
+Após adquirir um domínio vamos descer a página até a área de DNS
+![image](https://user-images.githubusercontent.com/49401569/185716994-e81a172f-4cc6-4c19-8215-ef53675ca6fd.png)
+Aqui vamos informar para onde nosso domínio irá ser direcionado
+![image](https://user-images.githubusercontent.com/49401569/185717031-9f26b387-0a30-4063-84e1-b7ff9fe7c99e.png)
+
+Após realizar as configurações temos que esperar o DNS se propagar e assim poderemos acessar nosso sistema já em produção.
+Para verificar você pode acessar o site [whatsmydns](https://www.whatsmydns.net/)
+
+![image](https://user-images.githubusercontent.com/49401569/185717379-5ccd72c6-a933-40d8-8105-7260e8da39b9.png)
+![image](https://user-images.githubusercontent.com/49401569/185717396-7bb6cc38-686b-4fcc-b7f9-8697dd83b684.png)
+
 
 
 
