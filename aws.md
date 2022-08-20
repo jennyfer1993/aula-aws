@@ -216,7 +216,7 @@ sudo docker logs -f flex-node
 ```
 ![image](https://user-images.githubusercontent.com/49401569/185251359-8419746a-891c-4d3f-8944-a511d34babad.png)
 
-# Configurando aplicação BackEnd e FrontEnd
+# Configurando aplicação BackEnd
 
 Para a aplicação BackEnd, segue as consigurações: 
 
@@ -282,11 +282,30 @@ sudo docker compose ps
 ```
 ![image](https://user-images.githubusercontent.com/74742097/185274753-54a5717c-cdb8-4aec-86cb-f0e05363d159.png)
 
-8 - Agora é ncessário retirar o projeto do ambiente de desenvolvimento e transofrmar em ambiente de produção, para isso entrar no container do workspace e rodar o comando na pasta do projeto react
+# Configurando aplicação FrontEnd
 
+1 - Na pasta **`document_root`** fazer o clone dos projetos BackEnd:
+```bash
+git clone https://github.com/flexpeak/agenda-front.git
+```
+2 - Agora, é necessário fazer a cópia do arquivo `.env-example` que contém em ambos os projetos e renomear para `.env`;
+•	Entrar na pasta do projeto **agenda-front** e utilize o seguinte comando para copiar `.env-example` e criar o arquivo `.env`, lembrando que o arquivo `.env` está definido no arquivo `.gitignore` portanto toda vez que for buildar o projeto é preciso criar manualmente o arquivo `.env`:
+```bash
+cp .env-example .env
+```
+3 - Agora é preciso instalar todas as dependências do projeto frontoend em **react** primeiro é preciso estar na pasta do `docker-flex` e entrar no container do workspace com o seguinte comando:
+```bash
+sudo docker compose exec --user=flexdock workspace
+```
+4 - Entrar na pasta do projeto backend **agenda-front** e rodar o comando:
+```bash
+npm install
+```
+5 - Agora é necessário retirar o projeto frontend do ambiente de desenvolvimento e transformar em ambiente de produção, para isso entrar no container do workspace e rodar o comando na pasta do projeto react
 ```bash
 npm run build
 ```
+
 Com os projetos todos configurados e buildados, vamos configurar o [Caddy]([https://docs.docker.com/engine/install/ubuntu/](https://caddyserver.com/)), ele será responsável por dar acesso aos nossos projetos utilizando protocolo HTTPS 
 Vamos acessar o arquivo de configuração dele que estará em ~/document_root/docker-flex/caddy/caddy
 ```bash
