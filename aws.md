@@ -239,13 +239,7 @@ https://github.com/flexpeak/agenda-front.git
 cp .env-example .env
 ```
 
-- Entrar na pasta do projeto `agenda-front` e utilize o seguinte comando para copiar  `.env-example` e criar o arquivo `.env`, lembrando que o arquivo `.env` está definido no arquivo `.gitignore` portanto toda vez que for buildar o projeto é preciso criar manualmente o arquivo `.env`: 
-
-```bash
-cp .env-example .env
-```
-
-3 - Agora é preciso instalar todas as dependências do projeto em **`node`** e **`react`**, premeiro é preciso estar na pasta do `docker-flex` e entrar no container do workspace com o sguinte comando: 
+3 - Agora é preciso instalar todas as dependências do projeto em **`node`**, premeiro é preciso estar na pasta do `docker-flex` e entrar no container do workspace com o sguinte comando: 
 
 ```bash
 sudo docker compose exec --user=flexdock workspace
@@ -256,12 +250,7 @@ sudo docker compose exec --user=flexdock workspace
 npm install
 ```
 
-5 - 4 - Entrar na pasta do projeto backend `agenda-front` e rodar o comando: 
-```bash
-npm install
-```
-
-6 - Configurar o backend dentro do projeto docker-flex, entrar editar o arquivo `ecosystem.config.js` dentro da pasta node, para editar o arquivo via terminal rodar o comando: 
+5 - Configurar o backend dentro do projeto docker-flex, entrar editar o arquivo `ecosystem.config.js` dentro da pasta node, para editar o arquivo via terminal rodar o comando: 
 ```bash
 nano ecosystem.config.js
 ```
@@ -288,12 +277,12 @@ sudo docker compose ps
 ```bash
 git clone https://github.com/flexpeak/agenda-front.git
 ```
-2 - Agora, é necessário fazer a cópia do arquivo `.env-example` que contém em ambos os projetos e renomear para `.env`;
+2 - Agora, é necessário fazer a cópia do arquivo `.env-example` que contém no projeto e renomear para `.env`;
 •	Entrar na pasta do projeto **agenda-front** e utilize o seguinte comando para copiar `.env-example` e criar o arquivo `.env`, lembrando que o arquivo `.env` está definido no arquivo `.gitignore` portanto toda vez que for buildar o projeto é preciso criar manualmente o arquivo `.env`:
 ```bash
 cp .env-example .env
 ```
-3 - Agora é preciso instalar todas as dependências do projeto frontoend em **react** primeiro é preciso estar na pasta do `docker-flex` e entrar no container do workspace com o seguinte comando:
+3 - Agora é preciso instalar todas as dependências do projeto frontend em **react**, primeiro é preciso estar na pasta do `docker-flex` e entrar no container do workspace com o seguinte comando:
 ```bash
 sudo docker compose exec --user=flexdock workspace
 ```
